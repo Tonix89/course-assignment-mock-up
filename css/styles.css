@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "Tahoma";
+    src: url("../fonts/tahoma.ttf") format("woff2");
+    font-family: "Segoe UI Bold";
+    src: url("../fonts/SegoeUIBold.ttf") format("woff2");
+}
+
+/** Colors 
+#152d35 -dark blue
+#345b63 - light blue
+#dbc7c7 - pink
+#f2e9f0 - light pink
+**/
+
+/** Body---------------------------------------------
+----------------------------**/
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Tahoma", 'Segoe UI', Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+nav a, li, a{
+    list-style: none;
+    text-decoration: none;
+}
+nav a, h1, h2 {
+    font-family: "Segoe UI Bold";
+    color: #152d35;
+    text-align: center;
+    margin-top: 0;
+}
+
+/** Header -----------------------------------------------
+------------------------ **/
+header{
+    background-color: #edd5e9;
+    width: 100vw;
+    position: fixed;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+.logo{
+    width: 150px;
+    height: 85px;
+    margin: 15px 0 5px 10px;
+}
+.icons{
+    margin-right: 15px;
+    margin-top: 0;
+}
+.icons img{
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    margin-left: 15px;
+}
+nav{
+    display: flex;
+    align-items: flex-end;
+
+}
+nav ul{
+    display: flex;
+    margin-bottom: 0;
+}
+nav a{
+    font-size: 30px;
+    margin-left: 20px;
+}
+/** Main-------------------------------------
+----------------------**/
+.branding{
+    margin-top: 125px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.flexible, .durable{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    margin-right: 10px;
+    margin-left: 10px;
+    column-gap: 10pxpx;
+    align-items: center;
+}
+.branding img{
+    height: 400px;
+    width: 400px;
+    margin-bottom: 25px;
+}
+
+.flexible{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.durable{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.protection div, .comfortable div{
+    margin: 10px;
+}
