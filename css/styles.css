@@ -19,7 +19,6 @@
 }
 body{
     font-family: "Tahoma", 'Segoe UI', Geneva, Verdana, sans-serif;
-    min-height: 100vh;
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -39,7 +38,7 @@ nav a, h1, h2 {
 ------------------------ **/
 header{
     background-color: #edd5e9;
-    width: 100vw;
+    min-width: 100vw;
     position: fixed;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -56,8 +55,8 @@ header{
 .icons img{
     width: 30px;
     height: 30px;
-    margin-top: 0;
-    margin-left: 15px;
+    margin-top: 5px;
+    margin-right: 10px;
 }
 nav{
     display: flex;
@@ -72,36 +71,120 @@ nav a{
     font-size: 30px;
     margin-left: 20px;
 }
-/** Main-------------------------------------
+/** Main branding------------------------------
 ----------------------**/
-.branding{
-    margin-top: 125px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.flexible, .durable{
-    grid-column-start: 1;
-    grid-column-end: 5;
-    margin-right: 10px;
-    margin-left: 10px;
-    column-gap: 10pxpx;
-    align-items: center;
+main{
+    margin-top: 105px;
+    padding: 10px;
 }
 .branding img{
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 520px;
     margin-bottom: 25px;
 }
-
-.flexible{
+.flexible,.durable{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+    align-items: center;
 }
-.durable{
+.durable>img{
+    grid-column: 2;
+}
+.durable>.text{
+    grid-column:1 ;
+}
+.branding-2{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 15px;
+    text-align: center;
+}
+.branding-2 img{
+    width: 430px;
+    height: 400px;
+}
+/***Main Product---------------------------------
+---------------------**/
+.product{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: center;
+    margin: auto;
+    grid-gap: 10px
+}
+.picture{
+    background-color: #dbc7c7c0;
+    padding: 5px;
+    width: 100%;
+    height: 350px;
+}
+.add-icon{
+    width: 40px;
+    height: 30px;
+    margin-right: 10px;
+    float:right;
+}
+.product p{
+    margin: 1px 10px;
+}
+.product-sample{
+    display: grid;
+    grid-template-columns: 0px 1fr;
+    grid-template-rows: 351px 1fr;
+    margin-top: 50px;
+}
+.like-icon{
+    grid-area: 1/1/1/1;
+    margin-left: 5px;
+}
+.sale{
+    grid-area: 1/1/1/1;
+    margin: 318px 0 8px 8px;
+    background-color: #152d35;
+    color: #dbc7c7;
+    border-radius: 5px;
+    width: 55px;
+    text-align: center;
+}
+.orig-price{
+    text-decoration: line-through;
+    text-decoration-color: #152d35;
+}
+
+/** Footer information -------------------------------------------
+-------------------------**/
+.info{
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: #152d35;
+    margin-top: 50px;
+    text-align: left;
 }
-.protection div, .comfortable div{
-    margin: 10px;
+.info-header h2, .info-header li{
+    margin-bottom: 5px;
+}
+.info-header a{
+    color: #dbc7c7;
+}
+
+/** Footer Social Media ---------------------------------------------
+--------------------------------**/
+.social-media, .payment-partners{
+    text-align: center;
+    margin-top: 40px;
+}
+footer img{
+    margin-inline: 20px;
+}
+
+/** Footer Copyright ------------------------------------------------
+-------------------------------**/
+footer p{
+    background-color: #edd5e9;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0;
+    padding: 10px;
 }
