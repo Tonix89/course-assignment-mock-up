@@ -24,6 +24,8 @@ body{
     grid-template-rows: auto 1fr auto;
 }
 nav a, li, a{
+    grid-column: 1;
+    grid-row: 1 / span 2;
     list-style: none;
     text-decoration: none;
 }
@@ -49,8 +51,11 @@ header{
     margin: 15px 0 5px 10px;
 }
 .icons{
+    grid-column: 2 / span 3;
+    grid-row: 1;
+    text-align: right;
     margin-right: 15px;
-    margin-top: 0;
+
 }
 .icons img{
     width: 30px;
@@ -59,9 +64,8 @@ header{
     margin-right: 10px;
 }
 nav{
-    display: flex;
-    align-items: flex-end;
-
+    grid-column: 2;
+    grid-row: 2;
 }
 nav ul{
     display: flex;
@@ -71,6 +75,24 @@ nav a{
     font-size: 30px;
     margin-left: 20px;
 }
+nav a:hover{
+    background-color: #152d35;
+    padding: 2px;
+    border-radius: 10px;
+    color: #dbc7c7;
+}
+.active{
+    text-decoration: underline;
+}
+label{
+    display: none;
+}
+#hamburger-menu {
+    display: none;
+}  
+#hamburger-menu:checked ~ nav a {
+    display: absolute;
+ }
 /** Main branding------------------------------
 ----------------------**/
 main{
@@ -164,6 +186,7 @@ main{
 }
 .info-header h2, .info-header li{
     margin-bottom: 5px;
+    text-align: left;
 }
 .info-header a{
     color: #dbc7c7;
@@ -176,6 +199,7 @@ main{
     margin-top: 40px;
 }
 footer img{
+    width: 50px;
     margin-inline: 20px;
 }
 
@@ -187,4 +211,142 @@ footer p{
     margin-top: 40px;
     margin-bottom: 0;
     padding: 10px;
+}
+
+/** Responsiveness --------------------------------------------------
+-------------------------------**/
+@media screen and (max-width: 900px) {
+    .branding img{
+        height: 350px;
+        width: 250px;
+    }
+    .product-sample {
+        grid-template-rows: 302px 1fr;
+    }
+    .picture {
+        height: 300px;
+    }
+    .sale {
+        margin: 270px 0 8px 8px;
+    }
+    .like-icon img{
+        width: 60px;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width:650px){
+    header{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    header a{
+        grid-column: 2;
+    }
+    nav a{
+        display: none;
+        font-size: 25px;
+    }
+    label{
+        display: block;
+        position: fixed;
+        margin-left: 20px;
+        margin-top: 35px;
+    }
+    label img{
+        width: 35px;
+    }
+    #hamburger-menu:checked ~ nav a{
+        display: grid;
+        text-align: left;
+    }
+    nav{
+        grid-column: 1;
+    }
+    nav ul{
+        display: inline;
+        position: absolute;
+        background-color: #edd5e9;
+        padding: 10px;
+        margin-top: -40px;
+    }
+    .icons img{
+        width: 25px;
+        height: 25px;
+        margin-right: 3px;
+    }
+    main{
+        margin-top: 80px;
+    }
+    .branding img{
+        height: 326px;
+        width: 200px;
+        margin-bottom: 5px;
+    }
+    .product{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .logo{
+        width: 135px;
+        height: 60px;
+    }
+    .info-header{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .info-header h2{
+        font-size: 18px;
+    }
+    .info-header li{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .logo{
+        width: 100px;
+        height: 50px;
+    }
+    label{
+        margin-top: 25px;
+    }
+    nav ul{
+        padding: 0 3px;
+        margin-top: -15px;
+    }
+    .icons{
+        grid-row: 2;
+        margin-right: 10px;
+    }
+    .icons img{
+        width: 20px;
+    }
+    .branding img{
+        width: 370px;
+    }
+    .flexible, .durable{
+        display: block;
+        text-align: center;
+    }
+    .durable>img{
+        grid-column: none;
+    }
+    .durable>.text{
+        grid-column: none;
+    }
+    .branding-2{
+        grid-template-columns: none;
+    } 
+    .product-sample {
+        grid-template-rows: 210px 1fr;
+    }
+    .picture {
+        height: 205px;
+    }
+    .sale {
+        margin: 172px 0 15px 8px;
+    }
+    .info-header h2{
+        font-size: 15px;
+    }
+
 }
